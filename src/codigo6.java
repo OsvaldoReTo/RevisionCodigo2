@@ -1,4 +1,4 @@
-import java.io.Console; //se importa paquetería para considerar el console
+import java.util.Scanner;
 
 public class codigo6 {
 	
@@ -12,14 +12,14 @@ public class codigo6 {
 	      n[i] = (int)(Math.random() * 381) + 20;
 	      System.out.print(n[i] + " ");//falta de out para ser un output y se escriba cada elemento
 	    }
-	    Console cnsl = System.console();
-	    if (cnsl == null) {
-	    	System.out.println("n");
-	    }
-	    int opcion = Integer.parseInt(cnsl.readLine());//falta de un paréntesis
+	    
 	    System.out.println("\n¿Qué números quiere resaltar? ");// hacía falta una n para imprimir
 	    System.out.print("(1 – los múltiplos de 5, 2 – los múltiplos de 7): ");
 
+	    Scanner sc= new Scanner(System.in); //se emplea scanner en lugar de función anterior para leer los input
+	    int opcion = sc.nextInt(); 
+	    //Integer.parseInt(System.console().readLine())
+	    sc.close();
 	    int multiplo = (opcion == 1) ? 5 : 7; //if ternario mal escrito es: (cond)?Y:N
 
 	    for (int e : n) { //error de sintaxis no es un foreach sería solo for también hay error en el tipo de dato, es int no char
